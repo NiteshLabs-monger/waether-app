@@ -1,1 +1,0 @@
-const APIKEY = "2cbd6de93ee49320d35c7952aa047809";
