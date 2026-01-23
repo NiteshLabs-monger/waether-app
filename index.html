@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>weatherForecast</title>
+  </head>
+  <body id="body">
+    <div class="contain">
+      <div id="sun">
+        <div id="container2"></div>
+        <div id="temp" class="embed"></div>
+      </div>
+      <div class="container">
+        <div class="search">
+          <input
+            id="input1"
+            type="text"
+            placeholder="city-Name"
+            spellcheck="true"
+          />
+          <button id="btn"></button>
+        </div>
+        <div class="content-container">
+          <div class="city-name">
+            <p id="city-name" style="font-size: 2rem">Rajasthan</p>
+          </div>
+          <div class="inner-content">
+            <div class="box-aqi">
+              <div class="aqi">AQI</div>
+              <svg class="aqi-gauge" viewBox="0 0 200 200">
+                <!-- Background ring -->
+                <circle
+                  class="gauge-background"
+                  fill="transparent"
+                  stroke="white"
+                  stroke-width="12"
+                  cx="100"
+                  cy="100"
+                  r="86"
+                />
+
+                <!-- Progress ring -->
+                <circle
+                  id="gaugeProgress"
+                  class="gauge-progress"
+                  cx="100"
+                  cy="100"
+                  r="86"
+                  
+                  
+                  
+                />
+                <text  id='aqi-value' x="70" y="100" fill="red" font-size="40">365</text>
+              </svg>
+              <div class="aqi-condition">MODERATE</div>
+            </div>
+
+            <div
+              class="daylight-ring"
+              style="
+                --sun-pos: 120deg;
+                --sunrise-pos: 60deg;
+                --sunset-pos: 300deg;
+              "
+            >
+              <svg class="ring-bg" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="54" class="ring-track" />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="54"
+                  class="ring-daylight"
+                  stroke-dasharray="339.292"
+                  stroke-dashoffset="65.412"
+                  style="--start: 60deg; --end: 300deg"
+                />
+              </svg>
+              <div class="time">
+                <p class="clock-time">12</p>
+                <p class="clock-time">3</p>
+                <p class="clock-time">6</p>
+                <p class="clock-time">9</p>
+              </div>
+              <div class="sun-icon"></div>
+              <div class="bubble sunrise-bubble" style="--bubble-angle: 60deg">
+                <span class="bubble-time">06:12</span>
+                <span class="bubble-label">Sunrise</span>
+              </div>
+              <div class="bubble sunset-bubble" style="--bubble-angle: 300deg">
+                <span class="bubble-time">17:42</span>
+                <span class="bubble-label">Sunset</span>
+              </div>
+            </div>
+            <div class="thermo-max">
+              <div id="tube">
+              </div>
+              <div id="bulb">
+                <p class="max-temp">54</p>
+              </div>
+            </div>
+            <div class="thermo-min">
+              <div id="tube-min">
+              </div>
+              <div id="bulb-min">
+                <p class="min-temp">54</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="index.js"></script>
+    
+  </body>
+</html>

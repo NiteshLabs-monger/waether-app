@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.josefin-slab {
+  font-family: "Josefin Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+}
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#sun {
+  height: 15rem;
+  width: 15rem;
+  background: radial-gradient(
+    circle at 30% 30%,
+    white 0%,
+    rgba(238, 255, 0, 1) 40%,
+    orange 80%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -2rem;
+  left: -50px;
+  box-shadow: 0 0 40px 20px yellow;
+}
+#temp {
+  height: 64px;
+  width: 60px;
+  position: absolute;
+  left: 38%;
+}
+
+@keyframes revolve {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#container2 {
+  height: 64px;
+  width: 60px;
+  position: relative;
+  animation: revolve linear 10s infinite;
+}
+
+.container {
+  height: 70vh;
+  width: 65vw;
+  background: url("worldmap.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+
+.rays {
+  height: 8px;
+  width: 20px;
+  background: radial-gradient(white, yellow);
+  box-shadow: 0 0 5px 2px yellow;
+  border-radius: 5px;
+  position: absolute;
+  top: 49%;
+  left: 10px;
+  transform-origin: right;
+}
+
+.search {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60%;
+  height: 10%;
+  margin-left: 40%;
+}
+
+#input1 {
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  height: 40px;
+  width: 80%;
+  background-color: white;
+  padding-left: 1rem;
+  cursor: text;
+}
+
+@keyframes enlarge {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+button:hover {
+  animation: enlarge ease-out 1s;
+}
+
+button {
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-image: url("magnifying-glass-solid-full.svg");
+  background-size: cover;
+  background-color: white;
+  cursor: pointer;
+}
+.content-container {
+  height: 90%;
+  width: 100%;
+
+  font-weight: bold;
+}
+
+.city-name {
+  height: 20%;
+  width: 60%;
+  border-radius: 1rem;
+  margin: 0 0 0.5rem 30%;
+}
+
+.inner-content {
+  height: 60%;
+  width: 80%;
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  border-radius: 1rem;
+  margin: 0 0 0.5rem 20%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.box-aqi {
+  height: 100%;
+  width: 30%;
+  background-image: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.2rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sun-rise-set {
+  height: 15%;
+  background: linear-gradient(135deg, #fddb92 0%, #d1fdff 100%);
+  border-radius: 1rem;
+  margin: 0 0.2rem 0.2rem 0.2rem;
+  font-size: 2rem;
+  font-family: consolas;
+  letter-spacing: 0.2rem;
+  color: orangered;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.daylight-ring {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  bottom: 0.5rem;
+}
+
+.ring-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  width: 220px;
+  height: 220px;
+  z-index: 0;
+}
+.ring-track {
+  fill: none;
+  stroke: #eef1f7;
+  stroke-width: 12;
+}
+.ring-daylight {
+  fill: none;
+  stroke: #ffd700;
+  stroke-width: 12;
+  stroke-linecap: round;
+
+  transform-origin: 60px 60px;
+}
+
+/* Place sun exactly on ring */
+.sun-icon {
+  --deg: var(--sun-pos, 120deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle at 70% 30%, #ffe66d, #faa800 80%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px #ffe66d60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* EXACT radius: 94px */
+  transform: rotate(calc(var(--deg))) translate(0, -94px);
+  animation: sun-move 2s cubic-bezier(0.5, 2, 0.5, 1) 1;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 2;
+}
+
+.gauge-background {
+  stroke: #eef1f7;
+  fill: "transparent";
+  stroke-width: "12";
+}
+.sunrise-bubble {
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.thermo-max,
+.thermo-min {
+  height: 93%;
+  width: 10%;
+
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+}
+.thermo-max {
+  background-image: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.thermo-min {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+#tube,
+#tube-min {
+  height: 90%;
+  width: 30%;
+  border-radius: 3rem;
+  background-color: white;
+  opacity: 0.3;
+}
+
+#bulb,
+#bulb-min {
+  height: 25%;
+  width: 65%;
+  color: white;
+  border-radius: 50%;
+  position: relative;
+  top: -5%;
+  
+}
+
+#bulb {
+  background-color: red;
+}
+#bulb-min {
+  background-color: blue;
+}
+
+#gaugeProgress {
+  fill: none;
+  stroke: red;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 0;
+  animation: aqi 2s ease-out 1;
+}
+
+@keyframes aqi {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 339.292;
+  }
+}
+
+.aqi, .aqi-condition {
+  background-color: white;
+  width: 9rem;
+  text-align: center;
+  padding: 0.05rem;
+  border-radius : 0.5rem;
+
+
+}
+
+.clock-time {
+  z-index: 1;
+  
+}
