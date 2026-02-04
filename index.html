@@ -37,21 +37,13 @@
                 <!-- Background ring -->
                 <circle
                   class="gauge-background"
-                  fill="transparent"
-                  stroke="white"
-                  stroke-width="12"
-                  cx="100"
-                  cy="100"
-                  r="86"
+                  
                 />
 
                 <!-- Progress ring -->
                 <circle
                   id="gaugeProgress"
-                  class="gauge-progress"
-                  cx="100"
-                  cy="100"
-                  r="86"
+                  
                   
                   
                   
@@ -63,36 +55,22 @@
 
             <div
               class="daylight-ring"
-              style="
-                --sun-pos: 120deg;
-                --sunrise-pos: 60deg;
-                --sunset-pos: 300deg;
-              "
+              
             >
               <svg class="ring-bg" viewBox="0 0 120 120">
-                <circle cx="60" cy="60" r="54" class="ring-track" />
+                <circle  class="ring-track" />
                 <circle
-                  cx="60"
-                  cy="60"
-                  r="54"
+                  
                   class="ring-daylight"
-                  stroke-dasharray="339.292"
-                  stroke-dashoffset="65.412"
-                  style="--start: 60deg; --end: 300deg"
+                  
                 />
               </svg>
-              <div class="time">
-                <p class="clock-time">12</p>
-                <p class="clock-time">3</p>
-                <p class="clock-time">6</p>
-                <p class="clock-time">9</p>
-              </div>
-              <div class="sun-icon"></div>
-              <div class="bubble sunrise-bubble" style="--bubble-angle: 60deg">
+           
+              <div class="bubble sunrise-bubble" >
                 <span class="bubble-time">06:12</span>
                 <span class="bubble-label">Sunrise</span>
               </div>
-              <div class="bubble sunset-bubble" style="--bubble-angle: 300deg">
+              <div class="bubble sunset-bubble">
                 <span class="bubble-time">17:42</span>
                 <span class="bubble-label">Sunset</span>
               </div>
@@ -116,8 +94,7 @@
         </div>
       </div>
     </div>
-    <script src="config.js"></script>
-    <script src="index.js"></script>
+    
     
   </body>
 </html>

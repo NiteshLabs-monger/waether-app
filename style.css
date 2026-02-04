@@ -63,7 +63,7 @@ body {
   height: 64px;
   width: 60px;
   position: relative;
-  animation: revolve linear 10s infinite;
+  /* animation: revolve linear 10s infinite; */
 }
 
 .container {
@@ -193,8 +193,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-
+  position: relative;
   width: 220px;
   height: 220px;
   z-index: 0;
@@ -203,47 +202,47 @@ button {
   fill: none;
   stroke: #eef1f7;
   stroke-width: 12;
+  cx: 60;
+  cy: 60;
+  r: 54;
 }
 .ring-daylight {
   fill: none;
   stroke: #ffd700;
   stroke-width: 12;
   stroke-linecap: round;
+  cx: 60;
+  cy: 60;
+  r: 54;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 65.412;
 
   transform-origin: 60px 60px;
+  transform: rotate(-90deg);
 }
 
 /* Place sun exactly on ring */
-.sun-icon {
-  --deg: var(--sun-pos, 120deg);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 32px;
-  height: 32px;
-  background: radial-gradient(circle at 70% 30%, #ffe66d, #faa800 80%);
-  border-radius: 50%;
-  box-shadow: 0 0 30px 10px #ffe66d60;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* EXACT radius: 94px */
-  transform: rotate(calc(var(--deg))) translate(0, -94px);
-  animation: sun-move 2s cubic-bezier(0.5, 2, 0.5, 1) 1;
-  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  z-index: 2;
-}
 
 .gauge-background {
-  stroke: #eef1f7;
-  fill: "transparent";
-  stroke-width: "12";
+  stroke: white;
+  fill: transparent;
+  stroke-width: 12;
+  cx: 100;
+  cy: 100;
+  r: 86;
+  
+  
 }
-.sunrise-bubble {
+
+.sunrise-bubble,
+.sunset-bubble {
   padding: 0.3rem;
   border-radius: 0.2rem;
   background-color: #fff;
   display: inline-block;
+  position: absolute;
+  top: 40%;
+  border-radius: 1rem;
 }
 
 .thermo-max,
@@ -282,7 +281,6 @@ button {
   border-radius: 50%;
   position: relative;
   top: -5%;
-  
 }
 
 #bulb {
@@ -293,13 +291,19 @@ button {
 }
 
 #gaugeProgress {
+  cx: 100;
+  cy: 100;
+  r: 86;
   fill: none;
   stroke: red;
   stroke-width: 12;
   stroke-linecap: round;
-  stroke-dasharray: 339.292;
-  stroke-dashoffset: 0;
-  animation: aqi 2s ease-out 1;
+  stroke-dasharray: 405;
+  /* stroke-dashoffset: 135.09; */
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+
+  /* animation: aqi 5s ease-out 1; */
 }
 
 @keyframes aqi {
@@ -311,17 +315,11 @@ button {
   }
 }
 
-.aqi, .aqi-condition {
+.aqi,
+.aqi-condition {
   background-color: white;
   width: 9rem;
   text-align: center;
   padding: 0.05rem;
-  border-radius : 0.5rem;
-
-
-}
-
-.clock-time {
-  z-index: 1;
-  
+  border-radius: 0.5rem;
 }
