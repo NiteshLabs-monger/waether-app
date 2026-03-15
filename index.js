@@ -28,7 +28,7 @@ function parseWeatherData(data) {
     humidity: data.main.humidity + "%",
     pressure: data.main.pressure + " hPa",
     visibility: (data.visibility / 1000).toFixed(1) + " km",
-    wind_speed: data.wind.speed + " m/s",
+    wind_speed: data.wind.speed + "m/s",
     wind_dir: windDirection(data.wind.deg), // assumes you already wrote this helper
     cloudiness: data.clouds.all + "%",
     sunrise: formatTime(data.sys.sunrise, data.timezone), // assumes you have this helper

@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>weatherForecast</title>
   </head>
@@ -75,7 +71,35 @@
                 <span class="bubble-label">Sunset</span>
               </div>
             </div>
-            <div class="thermo-max">
+            <div class="additionally">
+              <div class="humidity">
+                <div class="humid-val"></div>
+                <div class="humid-title">Humidity</div>
+              </div>
+              <div class="cloudiness">
+                <div class="cloud-val"></div>
+                <div class="cloud-title">cloudiness</div>
+              </div>
+              <table id="param-table">
+                <tr id="pressure">
+                  <td>pressure</td>
+                  <td></td>
+                </tr>
+                <tr id="wind-speed">
+                  <td>wind speed</td>
+                  <td></td>
+                </tr>
+                <tr id="wind-direction">
+                  <td >wind direction</td>
+                  <td></td>
+                </tr>
+                <tr id="visibility">
+                  <td>visibility</td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+            <!-- <div class="thermo-max">
               <div id="tube">
               </div>
               <div id="bulb">
@@ -88,7 +112,7 @@
               <div id="bulb-min">
                 <p class="min-temp">54</p>
               </div>
-            </div>
+            </div> -->
             
           </div>
         </div>
